@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+h3 {
+  line-height: 1.5em;
+  font-weight: 400;
+}
+h4 {
+  font-size: 32px;
+  line-height: 1.5em;
+}
+p {
+  line-height: 1.2em;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+img {
+  width: 100%;
+  display: block;
+}
+.container {
+  position: relative;
+  top: 100px;
+  left: 100px;
+  min-height: 100vh;
+  width: 100%;
+}
+.card {
+  color: rgb(36, 19, 19);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 8px;
+  padding: 20px;
+  position: absolute;
+  width: 250px;
+  background: #0c8256;
+  background: linear-gradient(135deg, #0c8256, #57d5a4);
+}
+
+.card-image {
+  transform: scale(1) rotate(0deg);
+  transition: all 2s;
+}
+
+.card-image:hover {
+  transform: scale(1.5) rotate(360deg);
+}
+
+@keyframes bob {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+.card:hover {
+  animation: bob 2s infinite;
+}
