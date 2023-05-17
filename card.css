@@ -5,6 +5,7 @@
 }
 body {
   font-family: "Roboto", sans-serif;
+  background-color: rgb(22, 22, 22);
 }
 h3 {
   line-height: 1.5em;
@@ -20,7 +21,9 @@ p {
   font-size: 0.8rem;
 }
 img {
+  object-fit: cover;
   width: 100%;
+  aspect-ratio: 1/1;
   display: block;
 }
 .container {
@@ -40,24 +43,93 @@ img {
 }
 .card {
   width: 30%;
+  flex: 1;
   color: rgb(36, 19, 19);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   border-radius: 8px;
   padding: 20px;
-  width: 250px;
-
-  background: #0c8256;
-  background: linear-gradient(135deg, #0c8256, #57d5a4);
 }
 
-.card-image {
+/*Different Image Backgrounds*/
+.bckg-1 {
+  background: #ffffff;
+  background: radial-gradient(at right bottom, #ffffff, #56e764);
+}
+.bckg-2 {
+  background: #e4e3e4;
+  background: radial-gradient(at right bottom, #e4e3e4, #1ca8c7);
+}
+.bckg-3 {
+  background: #d5f3ec;
+  background: radial-gradient(at right bottom, #d5f3ec, #f17b11);
+}
+.bckg-4 {
+  background: #ffffff;
+  background: radial-gradient(at right bottom, #ffffff, #8091e2);
+}
+/*
+*All Images Transitions and effects
+*Pick your favorite transition or delete them all
+*/
+.image-1 {
   transform: scale(1) rotate(0deg);
   transition: all 2s;
 }
+.image-2 {
+  transform: scale(1);
+  transition: all 2s;
+}
+.image-3 {
+  transform: scale(1);
+  transition: all 2s;
+}
 
-.card-image:hover {
+.image-4 {
+  transform: scale(1);
+  transition: all 2s;
+}
+
+.image-1:hover {
   transform: scale(1.5) rotate(360deg);
+}
+.image-2:hover {
+  transform: scale(1.1);
+}
+.image-3:hover {
+  transform: scale(1.1);
+}
+.image-4:hover {
+  transform: scale(1.1);
+}
+
+.card-content-container h3,
+h4,
+p {
+  animation: fadeInAnimation ease-out 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.card-image-container img {
+  animation: fadeInAnimation ease-out 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.card:hover {
+  animation: bob 2s infinite;
+}
+/*End Card Image Animations*/
+
+/*Animations*/
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes bob {
@@ -72,9 +144,7 @@ img {
   }
 }
 
-.card:hover {
-  animation: bob 2s infinite;
-}
+/*Media Queries*/
 
 @media only screen and (max-width: 600px) {
   .card {
